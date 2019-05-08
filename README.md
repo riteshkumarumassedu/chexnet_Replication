@@ -113,19 +113,3 @@ I use SGD+momentum rather than the Adam optimizer as described in the original [
 
 ## Note on data
 A sample of 621 test NIH chest x-rays enriched for positive pathology is included with the repo to faciliate immediate use and exploration in the `Explore Predictions.ipynb` notebook. The [full NIH dataset](https://nihcc.app.box.com/v/ChestXray-NIHCC) is required for model retraining.
-
-## Use and citation
-My goal in releasing this code is to increase transparency and replicability of deep learning models in radiology. I encourage you to use this code to start your own projects. If you do, please cite the repo:
-
-```@misc{Zech2018,
-  author = {Zech, J.},
-  title = {reproduce-chexnet},
-  year = {2018},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/jrzech/reproduce-chexnet}}
-}
-```
-
-## Acknowledgements
-With deep gratitude to researchers and developers at PyTorch, NIH, Stanford, and Project Jupyter, on whose generous work this project relies. With special thanks to Sasank Chilamkurthy, whose demonstration code was incorporated into this project. PyTorch is an incredible contribution to the research community.

@@ -1,5 +1,22 @@
+# reproduce-chexnet
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/jrzech/reproduce-chexnet/master?filepath=Explore_Predictions.ipynb)
+
+Provides Python code to reproduce model training, predictions, and heatmaps from the [CheXNet paper](https://arxiv.org/pdf/1711.05225) that predicted 14 common diagnoses using convolutional neural networks in over 100,000 NIH chest x-rays.
+
+![Illustration](illustration.png?raw=true "Illustration")
 
 
+## Getting Started:
+Click on the `launch binder` button at the top of this `README` to launch a remote instance in your browser using [binder](https://mybinder.org/). This requires no local configuration and lets you get started immediately. Open `Explore_Predictions.ipynb`, run all cells, and follow the instructions provided to review a selection of included [chest x-rays from NIH](https://arxiv.org/pdf/1705.02315.pdf).
+
+To configure your own local instance (assumes [Anaconda is installed](https://www.anaconda.com/download/); can be run on Amazon EC2 p2.xlarge instance if you do not have a GPU):
+
+```git clone https://www.github.com/jrzech/reproduce-chexnet.git
+cd reproduce-chexnet
+conda env create -f environment.yml
+source postBuild
+source activate reproduce-chexnet
+```
 
 ## Replicated results:
 This reproduction achieved average test set AUC 0.836 across 14 findings compared to 0.841 reported in original paper:
@@ -113,3 +130,19 @@ I use SGD+momentum rather than the Adam optimizer as described in the original [
 
 ## Note on data
 A sample of 621 test NIH chest x-rays enriched for positive pathology is included with the repo to faciliate immediate use and exploration in the `Explore Predictions.ipynb` notebook. The [full NIH dataset](https://nihcc.app.box.com/v/ChestXray-NIHCC) is required for model retraining.
+
+## Use and citation
+My goal in releasing this code is to increase transparency and replicability of deep learning models in radiology. I encourage you to use this code to start your own projects. If you do, please cite the repo:
+
+```@misc{Zech2018,
+  author = {Zech, J.},
+  title = {reproduce-chexnet},
+  year = {2018},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/jrzech/reproduce-chexnet}}
+}
+```
+
+## Acknowledgements
+With deep gratitude to researchers and developers at PyTorch, NIH, Stanford, and Project Jupyter, on whose generous work this project relies. With special thanks to Sasank Chilamkurthy, whose demonstration code was incorporated into this project. PyTorch is an incredible contribution to the research community.

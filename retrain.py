@@ -1,12 +1,33 @@
-import cxr_dataset as CXR
-import eval_model as E
-import model as M
+import yaml
+import model as cnn_model
 
 
-# you will need to customize PATH_TO_IMAGES to where you have uncompressed
-# NIH images
-PATH_TO_IMAGES = "/enter_your_path_to_downloaded_uncompressed_nih_images_here/"
-WEIGHT_DECAY = 1e-4
-LEARNING_RATE = 0.01
-preds, aucs = M.train_cnn(PATH_TO_IMAGES, LEARNING_RATE, WEIGHT_DECAY)
+#reading the model parameters from the yaml config file
+config_dict = yaml.load(open('config.yaml'))
 
+# name of the CNN model to be run
+model = config_dict['model']
+
+pretrained = config_dict['pretrained']
+finetuning = config_dict['fine_tuning']
+batch_size = config_dict['batch_size']
+
+weight_decay = config_dict['weight_decay']
+learning_rate = config_dict['learning_rate']
+
+optmizer = config_dict['optimizer']
+
+tune_epochs = config_dict['tune_epochs']
+train_epochs = config_dict['train_epochs']
+
+images_dir = config_dict['images_dir']
+labels_dir = config_dict['labels_dir']
+
+# pritning config details for logging purpose
+print(config_dict)
+
+
+# call the method to start training
+
+# path to images # learning rate # weight_decay
+cnn_model.train_model_handler(images_dir, learning_rate, weight_decay, config_dict)

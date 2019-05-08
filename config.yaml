@@ -1,0 +1,11 @@
+models : ['vgg19_bn', 'resnet34', 'resnet50', 'densenet121']
+pretrained : True
+fine_tuning : True
+tune_epochs : 5
+train_epochs : 10
+batch_size : 8
+
+images_dir : './image_data/images'
+labels_dir : './image_data/sample_labels.csv'
+class_names : [ 'Atelectasis', 'Cardiomegaly', 'Effusion', 'Infiltration', 'Mass', 'Nodule', 'Pneumonia',
+                'Pneumothorax', 'Consolidation', 'Edema', 'Emphysema', 'Fibrosis', 'Pleural_Thickening', 'Hernia', 'No Finding']

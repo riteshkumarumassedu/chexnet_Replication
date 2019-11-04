@@ -1,6 +1,6 @@
 # CheXnet paper replication
 
-Provides Python code to reproduce model training, predictions, and heatmaps from the [CheXNet paper](https://arxiv.org/pdf/1711.05225) that predicted 14 common diagnoses using convolutional neural networks in over 100,000 NIH chest x-rays.
+PyTroch replication for the [CheXNet paper](https://arxiv.org/pdf/1711.05225) that predicted 14 different pathologiesusing the convolutional neural networks in over 100,000 NIH frontal chest xray images.
 
 
 ## NIH Dataset
